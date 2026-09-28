@@ -1,3 +1,20 @@
+## [4.1.3]
+* fix: Modify Assertion Logic
+
+## [4.1.2]
+* fix: Fix the problem of nil judgment error
+
+## [4.1.1]
+* fix: Delete unused packages
+* fix: Using bodyMedium instead of bodyText2
+
+## [4.1.0]
+* feat: Support global configuration
+* docs: Add English API documentation and English comments
+
+## [4.0.4]
+* feat: Added margin param to showNotification
+
 ## [4.0.3]
 * feat: Add safe area flag for custom options
 

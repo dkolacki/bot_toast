@@ -3,20 +3,18 @@ BotToast 🤖
 A really easy to use flutter toast library!
 
 [![](https://img.shields.io/pub/v/bot_toast.svg?label=bot_toast&logo=https%3A%2F%2Fpub.flutter-io.cn%2Fpackages%2Fbot_toast)](https://pub.dev/packages/bot_toast)
-[![Build Status](https://github.com/MMMzq/bot_toast/workflows/CI/badge.svg)](https://github.com/MMMzq/bot_toast/actions)
-[![codecov](https://codecov.io/gh/MMMzq/bot_toast/branch/master/graph/badge.svg)](https://codecov.io/gh/MMMzq/bot_toast)
 
 ### Language: English | [中文简体](README_zh.md)
 
-* [🐲Overview](#Overview)
-* [🐼Online Demo](#Online-Demo)
-* [🐳Example](#Example)
-* [🐺Renderings](#Renderings)
-* [🐮Getting started](#Getting-started) 
-* [🐼3.0 version](#30-version)
-* [📃Documentation](#Documentation) 
+* [Overview](#Overview)
+* [Online Demo](#Online-Demo)
+* [Example](#Example)
+* [Renderings](#Renderings)
+* [Getting started](#Getting-started) 
+* [3.0 version](#30-version)
+* [Documentation](#Documentation) 
 
-###  🐲Overview
+###  Overview
 
 - In the true sense of Toast, you can call it whenever you need it, without any restrictions! 
 
@@ -28,15 +26,17 @@ A really easy to use flutter toast library!
 
 - Pure flutter implementation
 
+- Supports global configuration
 
-### 🐼Online Demo
+
+### Online Demo
 
 **[Online demo](https://mmmzq.github.io/bot_toast/#/)** (Web effects may be biased, the actual effect is subject to the mobile phone)
 
-### 🐳Example
+### Example
 **[Sample project](example)**
 
-### 🐺Renderings
+### Renderings
 
 Notification|Attached|CustomAnimation
 --------|-------|--------
@@ -46,21 +46,20 @@ Loading|Text|CustomWidget
 --------|-------|----------
 ![Loading](doc/gif/loading.gif)|![Text](doc/gif/text.gif)|![CustomWidget](doc/gif/custom_widget.gif)
 
-### 🐮Getting started
+### Getting started
 
-#### 1. add dependencies into you project pubspec.yaml file
+#### 1. Add dependencies into you project pubspec.yaml file
 ``` yaml
 dependencies:
-     bot_toast: ^3.0.5 
-#    bot_toast: ^4.0.0 #null safety
+   bot_toast: ^4.1.0 #null safety
 ```
 
-#### 2. import BotToast lib
+#### 2. Import BotToast Lib
 ``` dart
 import 'package:bot_toast/bot_toast.dart';
 ```
 
-#### 3. initialization BotToast
+#### 3. Initialization BotToast
 ``` dart
 MaterialApp(
       title: 'BotToast Demo',
@@ -85,7 +84,7 @@ MaterialApp(
   )
 ```
 
-#### 4. use BotToast
+#### 4. Use BotToast
 ``` dart
 var cancel = BotToast.showText(text:"xxxx");  //popup a text toast;
 ...
@@ -132,7 +131,26 @@ var cancel = BotToast.showAnimationWidget(...)
 cancel();  //close
 ```
 
-### 🐼3.0 version
+#### 5. Modify Global Configuration
+
+``` dart
+/// For example: Globally change the animation duration for standard notifications to 1 second.
+BotToast.defaultOption.notification.animationDuration = const Duration(seconds: 1);
+
+/// For more default options, refer to the following configurations:
+/// [BotToast.defaultOption.simpleNotification] corresponds to the default values of [showSimpleNotification].
+/// [BotToast.defaultOption.notification] corresponds to the default values of [showNotification].
+/// [BotToast.defaultOption.customNotification] corresponds to the default values of [showCustomNotification].
+/// [BotToast.defaultOption.text] corresponds to the default values of [showText].
+/// [BotToast.defaultOption.customText] corresponds to the default values of [showCustomText].
+/// [BotToast.defaultOption.loading] corresponds to the default values of [showLoading].
+/// [BotToast.defaultOption.customLoading] corresponds to the default values of [showCustomLoading].
+/// [BotToast.defaultOption.attached] corresponds to the default values of [showAttachedWidget].
+/// [BotToast.defaultOption.animation] corresponds to the default values of [showAnimationWidget].
+/// [BotToast.defaultOption.enhanced] corresponds to the default values of [showEnhancedWidget].
+```
+
+### 3.0 version
 
 #### Major changes:
 
@@ -167,8 +185,8 @@ MaterialApp(
 <br>
 
 
-###  📃Documentation
-[Documentation](API.md)
+###  Documentation
+[API Documentation](API.md)
 
 
 

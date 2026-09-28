@@ -3,23 +3,21 @@ BotToast 🤖
 一个真正意义上的flutter Toast库!
 
 [![](https://img.shields.io/pub/v/bot_toast.svg?label=bot_toast&logo=https%3A%2F%2Fpub.flutter-io.cn%2Fpackages%2Fbot_toast)](https://pub.flutter-io.cn/packages/bot_toast)
-[![Build Status](https://github.com/MMMzq/bot_toast/workflows/CI/badge.svg)](https://github.com/MMMzq/bot_toast/actions)
-[![codecov](https://codecov.io/gh/MMMzq/bot_toast/branch/master/graph/badge.svg)](https://codecov.io/gh/MMMzq/bot_toast)
 
 ### Language: [English](README.md) | 中文简体
 
-* [🐲概述](#概述)
-* [🐼在线Demo](#在线demo)
-* [🐳示例项目](#示例项目)
-* [🐺效果图](#效果图)
-* [🐮快速使用](#快速使用) 
-* [🐼3.0版本](#30版本)
-* [🐨注意事项](#注意事项) 
-* [📃主要Api文档](#主要Api文档) 
+* [概述](#概述)
+* [在线Demo](#在线demo)
+* [示例项目](#示例项目)
+* [效果图](#效果图)
+* [快速使用](#快速使用) 
+* [3.0版本](#30版本)
+* [注意事项](#注意事项) 
+* [主要Api文档](#主要Api文档) 
 
 <br>
 
-###  🐲概述
+###  概述
 
 - 真正意义上的Toast,可以在任何你需要的时候调用,不会有任何限制!
 
@@ -31,16 +29,18 @@ BotToast 🤖
 
 - 纯flutter实现
 
+- 支持全局配置
 
 
-### 🐼在线demo
+
+### 在线demo
 
 **[在线例子](https://mmmzq.github.io/bot_toast/#/)** (Web效果可能有偏差,真实效果请以手机端为准,第一次加载可能会很久)
 
-### 🐳示例项目
+### 示例项目
 **[sample project](example)**
 
-### 🐺效果图
+### 效果图
 
 Notification|Attached|CustomAnimation
 --------|-------|--------
@@ -50,13 +50,12 @@ Loading|Text|CustomWidget
 --------|-------|----------
 ![Loading](doc/gif/loading.gif)|![Text](doc/gif/text.gif)|![CustomWidget](doc/gif/custom_widget.gif)
 
-### 🐮快速使用
+### 快速使用
 
 #### 1. pubspec.yaml文件里添加依赖
 ``` yaml
 dependencies:
-     bot_toast: ^3.0.5 
-#    bot_toast: ^4.0.0 #null safety
+    bot_toast: ^4.1.0 #null safety
 ```
 
 #### 2. 导入BotToast库
@@ -139,7 +138,26 @@ cancel();  //关闭
 
 <br>
 
-### 🐼3.0版本
+#### 5. 修改全局配置
+  
+``` dart
+///例如：全局修改标准通知的动画时间为 1 秒。
+BotToast.defaultOption.notification.animationDuration=const Duration(seconds: 1);
+
+///更多默认选项参考下述配置
+///[BotToast.defaultOption.simpleNotification] 对应 [showSimpleNotification] 的默认值
+///[BotToast.defaultOption.notification] 对应 [showNotification] 的默认值
+///[BotToast.defaultOption.customNotification] 对应 [showCustomNotification] 的默认值
+///[BotToast.defaultOption.text] 对应 [showText] 的默认值
+///[BotToast.defaultOption.customText] 对应 [showCustomText] 的默认值
+///[BotToast.defaultOption.loading] 对应 [showLoading] 的默认值
+///[BotToast.defaultOption.customLoading] 对应 [showCustomLoading] 的默认值
+///[BotToast.defaultOption.attached] 对应 [showAttachedWidget] 的默认值
+///[BotToast.defaultOption.animation] 对应 [showAnimationWidget] 的默认值
+///[BotToast.defaultOption.enhanced] 对应 [showEnhancedWidget] 的默认值
+```
+
+### 3.0版本
 
 #### 主要改动:
 
@@ -175,7 +193,7 @@ MaterialApp(
 <br>
 
 
-### 🐨注意事项
+### 注意事项
 
 - 如果你项目有多个`Navigator`,请将该`BotToastNavigatorObserver`添加到`Navigator.observers`,否则将会影响一些功能
 
@@ -185,8 +203,8 @@ MaterialApp(
 
 <br>
 
-###  📃主要Api文档
-[主要Api文档](API.md)
+###  主要Api文档
+[主要Api文档](API_zh.md)
 
 
 
